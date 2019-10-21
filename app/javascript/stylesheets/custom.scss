@@ -1,0 +1,65 @@
+* {
+    outline: none;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.content-grid {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+form {
+    max-width: 350px;
+}
+
+form input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.cards {
+    margin: 0px 0px 0px -18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 335px;
+    margin: 20px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+}
+
+.card-footer {
+    padding: 20px;
+}
+
+.card-heading {
+    margin: 0;
+}
+
+.card-body {
+    margin: 10px 0px;
+}
+
+
+.nav-logo {
+    margin-right: 35px;
+}
+
+.nav-item {
+    padding: 10px 15px;
+}

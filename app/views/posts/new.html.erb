@@ -1,0 +1,21 @@
+<h1>Додати друга</h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+    <div>
+        <%= f.label :species, "Хто шукає дім?" %>
+        <%= f.select :species, options_for_select([["Собака", "Собака"], ["Кішка", "Кішка"]]) %>
+    </div>
+    <div>
+        <%= f.label :name, "Кличка" %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div>   
+        <%= f.label :photo, "Додати фото"%>
+        <%= f.file_field :photo, accept: "image/jpg, image/jpeg" %>
+    </div>
+
+    <div>
+        <%= f.submit "Додати" %>
+    </div>
+<% end %>

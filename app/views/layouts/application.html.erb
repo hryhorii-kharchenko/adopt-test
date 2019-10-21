@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AdoptTest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="content-grid">
+      <div class="nav">
+        <h5 class="nav-logo">Захистимо тварин разом</h5>
+        <a class="nav-item" href="<%=root_path%>">Головна сторінка</a>
+        <a class="nav-item" href="http://localhost:3000/posts/new">Додати друга</a>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
