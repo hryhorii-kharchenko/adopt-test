@@ -1,5 +1,7 @@
 <h1>Список тваринок</h1>
 
+<%= "<p class='no-posts'>Тут поки що немає тварин. Додайте свого друга першим!</p>".html_safe if @posts_count == 0 %>
+
 <div class="cards">
     <% @posts.each do |post| %>
         <div class="card">
@@ -11,6 +13,16 @@
         </div>
     <% end %>
 </div>
+
+<ul class="pager">
+    <li class="previous <%= @page == 0 ? 'disabled' : '' %>">
+        <%= link_to_if @page > 0, "<< Попередня", posts_path(page: @page - 1) %>
+    </li>
+
+    <li class="next <%= @page == @max_page ? 'disabled' : '' %>">
+        <%= link_to_if @page < @max_page, "Наступна >>", posts_path(page: @page + 1)%>
+    </li>
+</ul>
 
 
 

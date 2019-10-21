@@ -1,23 +1,34 @@
 class PostsController < ApplicationController
+    POSTS_SIZE = 6
+ 
     def index
-        @posts = Post.all
+      
+    end
+
+    def index
+        @posts_count = Post.all.count
+        if @posts_count >= POSTS_SIZE
+            @max_page = (@posts_count / POSTS_SIZE.to_f).ceil - 1
+        else
+            @max_page = 0
+        end
+
+        @page = (params[:page] || 0).to_i
+        @posts = Post.offset(POSTS_SIZE * @page).limit(POSTS_SIZE)
     end
 
     def new
-        
+        @post = Post.new
     end
 
     def create
         @post = Post.new(post_params)
- 
-        @post.save
-        redirect_to root_path
 
-        # upload = params[:post][:photo]
-
-        # unless upload and upload.content_type =~ /^image\/(jpeg|jpg)$/
-        #     # errors.add(:upload, "Not a valid image")
-        # end
+        if @post.save
+            redirect_to root_path
+        else
+            render 'new'
+        end
     end
 
     private def post_params

@@ -1,5 +1,27 @@
 <h1>Додати друга</h1>
 
+
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+        <h3>
+            <%=
+                if @post.errors.count > 1
+                    @post.errors.count.to_s + " помилки заважають"
+                else
+                    @post.errors.count.to_s + " помилка заважає" 
+                end
+            %>
+            збереженню цього запису
+        </h3>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
+
+
 <%= form_for :post, url: posts_path do |f| %>
     <div>
         <%= f.label :species, "Хто шукає дім?" %>

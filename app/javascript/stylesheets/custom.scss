@@ -11,6 +11,7 @@ html, body {
     margin: 0 auto;
     padding: 0px 10px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 form {
@@ -22,18 +23,23 @@ form input {
     box-sizing: border-box;
 }
 
+.field_with_errors input {
+    border-color: #cc0000;
+}
+
 
 .cards {
     margin: 0px 0px 0px -18px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
 }
 
 .card {
-    max-width: 335px;
-    margin: 20px;
+    max-width: 345px;
+    width: 100%;
+    margin: 17px;
     border: 1px solid lightgray;
     box-sizing: border-box;
 }
@@ -62,4 +68,22 @@ form input {
 
 .nav-item {
     padding: 10px 15px;
+}
+
+
+.pager {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.previous, .next {
+    margin: 0 15px;
+    display: block;
+    list-style-type: none;
+}
+
+li.disabled {
+    display: none;
 }
